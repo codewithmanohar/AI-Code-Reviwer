@@ -1,5 +1,6 @@
 import { create } from "zustand";
-import axios from "axios"
+import { axiosInstance } from "../lib/axios";
+import axios from "axios";
 
 export const useCodeStore = create((set) => ({
     reviewedCode: null,
@@ -8,9 +9,8 @@ export const useCodeStore = create((set) => ({
     setReviewedCode: async (code) => {
         set({ isLoadingReview: true });
         try {
-            const response = await axios.post("http://localhost:8000/api/get-review", {code});
+            const response = await axiosInstance.post("/get-review", {code}) ;
             set({ reviewedCode: response.data })
-            console.log(response.data)
         }
         catch (error) {
             console.log(error);
