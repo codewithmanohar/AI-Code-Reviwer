@@ -6,11 +6,16 @@ import path from "path"
 dotenv.config();
 const app = express();
 const PORT = process.env.PORT ;
-
+import {data} from "./MOCK_DATA.js" 
 app.use(express.json());
 app.use(cors({
     origin : "*",
 }));
+
+
+app.get("/data",(req , res) => {
+    res.send({data : data});
+})
 const __dirname = path.resolve();
 
     app.use("/api" , AIRoute);
