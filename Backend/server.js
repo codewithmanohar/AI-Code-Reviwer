@@ -13,7 +13,7 @@ app.use(cors({
 }));
 
 
-app.get("/data",(req , res) => {
+app.get("/api/info",(req , res) => {
     res.send({data : data});
 })
 const __dirname = path.resolve();
