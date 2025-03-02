@@ -7,6 +7,7 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT ;
 import {data} from "./MOCK_DATA.js" 
+import {USER} from "./MOCK_DATA2.js" 
 app.use(express.json());
 app.use(cors({
     origin : "*",
@@ -16,6 +17,10 @@ app.use(cors({
 app.get("/api/info",(req , res) => {
     res.send({data : data});
 })
+app.get("/api/data" , (__ , res ) => {
+    res.json(USER);
+})
+
 const __dirname = path.resolve();
 
     app.use("/api" , AIRoute);

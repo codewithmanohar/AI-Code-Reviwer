@@ -1,10 +1,13 @@
 import CodeReview from "./pages/CodeReview"
+import Data from "./pages/Data"
+
 
 function App() {
 
   return (
    <>
-    <CodeReview/>
+    {/* <CodeReview/> */}
+    <Data />
    </>
   )
 }
