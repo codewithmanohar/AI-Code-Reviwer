@@ -6,8 +6,8 @@ function App() {
 
   return (
    <>
-    {/* <CodeReview/> */}
-    <Data />
+    <CodeReview/>
+    {/* <Data /> */}
    </>
   )
 }
